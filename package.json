@@ -6,7 +6,8 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "ts-node src/server",
     "prestart:prod": "npm run build",
-    "start:prod": "node dist/server.js"
+    "start:prod": "node dist/server.js",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "keywords": [],
   "author": "",
