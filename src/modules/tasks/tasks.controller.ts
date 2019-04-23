@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post, Param, Put, Delete} from '@nestjs/common';
 import {
+  ApiBearerAuth,
   ApiOperation,
   ApiResponse,
   ApiUseTags,
@@ -9,6 +10,7 @@ import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
 import { Task } from './interfaces/task.interface';
 
+@ApiBearerAuth()
 @ApiUseTags('tasks')
 @Controller('tasks')
 export class TasksController {
