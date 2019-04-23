@@ -23,7 +23,7 @@ export class TasksController {
     description: 'The record has been successfully created.',
   })
   async create(@Body() createTaskDto: CreateTaskDto) {
-    this.tasksService.create(createTaskDto);
+    return this.tasksService.create(createTaskDto);
   }
 
   @ApiOperation({ title: 'All task' })
