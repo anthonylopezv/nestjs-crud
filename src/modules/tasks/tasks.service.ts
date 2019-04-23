@@ -3,6 +3,7 @@ import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
 import { Task } from './interfaces/task.interface';
 import { CreateTaskDto } from './dto/create-task.dto';
+import { UpdateTaskDto } from './dto/update-task.dto';
 
 @Injectable()
 export class TasksService {
@@ -23,8 +24,8 @@ export class TasksService {
     return await this.taskModel.findById(id);
   }
 
-  async updateTask(id: String, taskData: Partial<Task>): Promise<Task> {
-    return await this.taskModel.findByIdAndUpdate(id, taskData);
+  async updateTask(id: String, updateTaskDto: UpdateTaskDto): Promise<Task> {
+    return await this.taskModel.findByIdAndUpdate(id, updateTaskDto);
   }
 
   async deleteTask(id: String) : Promise<Task> {

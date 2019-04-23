@@ -6,6 +6,7 @@ import {
 } from '@nestjs/swagger';
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
+import { UpdateTaskDto } from './dto/update-task.dto';
 import { Task } from './interfaces/task.interface';
 
 @ApiUseTags('tasks')
@@ -23,21 +24,25 @@ export class TasksController {
     this.tasksService.create(createTaskDto);
   }
 
+  @ApiOperation({ title: 'All task' })
   @Get()
   async findTasks(): Promise<Task[]> {
     return this.tasksService.findTasks();
   }
 
+  @ApiOperation({ title: 'Task' })
   @Get(':id')
   async findTask(@Param('id') id: string) {
     return await this.tasksService.findTask(id);
   }
 
+  @ApiOperation({ title: 'Update task' })
   @Put(':id')
-  async updateTask(@Param('id') id: string, @Body() task: Partial<Task>) {
-    return await this.tasksService.updateTask(id, task);
+  async updateTask(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
+    return await this.tasksService.updateTask(id, updateTaskDto);
   }
 
+  @ApiOperation({ title: 'Delete task' })
   @Delete(':id')
   async deleteTask(@Param('id') id: string) {
     return await this.tasksService.deleteTask(id);
