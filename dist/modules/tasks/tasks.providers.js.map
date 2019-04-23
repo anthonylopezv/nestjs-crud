@@ -1,0 +1,1 @@
+{"version":3,"file":"tasks.providers.js","sourceRoot":"","sources":["../../../src/modules/tasks/tasks.providers.ts"],"names":[],"mappings":";;AAEA,uDAAmD;AAEtC,QAAA,cAAc,GAAG;IAC5B;QACE,OAAO,EAAE,gBAAgB;QACzB,UAAU,EAAE,CAAC,UAAsB,EAAE,EAAE,CACrC,UAAU,CAAC,KAAK,CAAC,SAAS,EAAE,wBAAU,CAAC;QACzC,MAAM,EAAE,CAAC,mBAAmB,CAAC;KAC9B;CACF,CAAC"}
