@@ -17,7 +17,7 @@ export class TasksService {
   }
 
   async findTasks(): Promise<Task[]> {
-    return await this.taskModel.find().exec();
+    return await this.taskModel.find();
   }
 
   async findTask(id: String): Promise<Task> {

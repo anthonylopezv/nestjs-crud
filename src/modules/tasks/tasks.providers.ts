@@ -6,7 +6,7 @@ export const TasksProviders = [
   {
     provide: 'TaskModelToken',
     useFactory: (connection: Connection) =>
-      connection.model('Contact', TaskSchema),
+      connection.model('Task', TaskSchema),
     inject: ['DbConnectionToken']
   }
 ];

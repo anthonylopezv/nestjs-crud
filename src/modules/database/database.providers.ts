@@ -5,8 +5,8 @@ export const databaseProviders = [
     {
         provide: 'DbConnectionToken',
         useFactory: async (): Promise<typeof mongoose> =>
-      await mongoose.connect(process.env.MLAB_URL, {
-        useNewUrlParser: true,
-      }),
+        await mongoose.connect(process.env.MLAB_URL, {
+          useNewUrlParser: true,
+        }),
     }
 ];
