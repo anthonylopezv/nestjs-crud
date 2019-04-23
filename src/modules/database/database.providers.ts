@@ -5,7 +5,7 @@ export const databaseProviders = [
     {
         provide: 'DbConnectionToken',
         useFactory: async (): Promise<typeof mongoose> =>
-      await mongoose.connect('mongodb://admin:admin2019@ds117846.mlab.com:17846/database-nestjs', {
+      await mongoose.connect(process.env.MLAB_URL, {
         useNewUrlParser: true,
       }),
     }
